@@ -48,4 +48,9 @@ const App = props => {
   );
 };
 
-export default App;
+const mapStateToProps = (state) => {
+  return({
+    displayFavorites: state.favoritesState.displayFavorites
+  })
+}
+export default connect(mapStateToProps, null)(App);

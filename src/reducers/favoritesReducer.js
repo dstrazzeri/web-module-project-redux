@@ -1,4 +1,4 @@
-import { TOGGLE_FAVORITES, ADD_FAVORITE, REMOVE_FAVORITE}  from './../actions/favoritesActions';
+import { TOGGLE_FAVES, ADD_FAVE, REMOVE_FAVE}  from './../actions/favoritesActions';
 
 const initialState = {
     favorites: [],
@@ -7,19 +7,19 @@ const initialState = {
 
 const favoritesReducer = (state = initialState, action)=> {
     switch(action.type) {
-        case(TOGGLE_FAVORITES): {
+        case(TOGGLE_FAVES): {
             return {
                 ...state,
                 displayFavorites: !state.displayFavorites
             }
         }
-        case(ADD_FAVORITE): {
+        case(ADD_FAVE): {
             return {
                 ...state,
                 favorites: [...state.favorites, action.payload]
             }
         }
-        case(REMOVE_FAVORITE): {
+        case(REMOVE_FAVE): {
             return {
                 ...state,
                 favorites: state.favorites.filter(item=>(item.id !== action.payload))
