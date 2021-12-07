@@ -27,8 +27,8 @@ const MovieHeader = (props) => {
 
 const mapStateToProps = (state) => {
     return({
-        appTitle: state.movieState.appTitle,
-        displayFavorites: state.favoriteState.displayFavorites
+        appTitle: state.appTitle,
+        // displayFavorites: state.favoriteState.displayFavorites
     })
 }
-export default connect(mapStateToProps, {toggleFaves})(MovieHeader);
+export default connect(mapStateToProps)(MovieHeader);

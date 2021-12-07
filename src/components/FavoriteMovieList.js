@@ -6,12 +6,12 @@ import { removeFave } from '../actions/favoritesActions';
 
 
 const FavoriteMovieList = (props) => {
-    // const favorites = [];
+    const favorites = [];
     
     return (<div className="col-xs savedContainer">
         <h5>Favorite Movies</h5>
         {
-            props.favorites.map(movie=>{
+           favorites.map(movie=>{
                 return <div key={movie.id}>
                     <Link className="btn btn-light savedButton" to={`/movies/${movie.id}`}>
                         {movie.title}
@@ -24,7 +24,7 @@ const FavoriteMovieList = (props) => {
 }
 const mapStateToProps = (state) => {
     return({
-        favorites: state.favoritesState.favorites
+        // favorites: state.favoritesState.favorites
     })
 }
 

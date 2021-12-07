@@ -24,18 +24,18 @@ const MovieList = (props)=> {
 
                 <tbody>
                     {
-                        props.map(movie=><MovieListItem key={movie.id} movie={movie}/>)
+                        props.movies.map(movie=><MovieListItem key={movie.id} movie={movie}/>)
                     }
                 </tbody>
             </table>
             
-            <MovieFooter totalMovies={props.length}/>
+            <MovieFooter totalMovies={props.movies.length}/>
         </div>
     );
 }
 const mapStateToProps = (state) => {
     return({
-        movies: state.movieState.movies
+        movies: state.movies
     })
 }
 export default connect(mapStateToProps)(MovieList);
